@@ -1,7 +1,26 @@
 
-var myData=[{"name": "St. Charles Church","address": "Karlsplatz 1, 1010 Vienna",
+var myData=[{"kind": "place",
+	         "name": "St. Charles Church","address": "Karlsplatz 1, 1010 Vienna",
 	         "picture": "img/karlskirche.jpg" 
-            },{"name": "Zoo Vienna",
+            },{"kind": "place",
+               "name": "Zoo Vienna",
 	         "address": "Maxingstraße 13b, 1130 Wien",
 	         "picture": "img/zoovienna.jpg" 
-            }];
+            },
+            {"kind": "restaurant",
+               "name": "Lemon Leaf",
+	         "address": "Kettenbrückengasse 19, 1050 Vienna",
+	         "picture": "img/lemonleaf.png" ,
+	         "phone" : "+43(1)5812308",
+	         "weburl": "www.lemonleaf.at",
+	         "category": "Asian"
+            },
+            {"kind": "restaurant",
+               "name": "SIXTA",
+	         "address": "1050 Wien, Schönbrunner Straße 21 ",
+	         "picture": "img/sixta.png", 
+	         "phone": "+43 1 58 528 56 , +43 1 58 528 56",
+	         "weburl": "www.sixta-restaurant.at",
+	         "category": "Viennesse"
+            }
+        ];

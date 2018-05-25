@@ -9,10 +9,15 @@ class Restaurants extends Locations{
   this.phone=Phone;
   this.category=Category;
   this.weburl=WebUrl;
-  this.xTemplate=``;
+  this.xTemplate=`<div class="moreInfo">
+                  <p><span>${Category}</span></p>
+                  <p>${Phone}</p>
+                  <p><a href="https://$(WebUrl)">${WebUrl}</p> 
+                  </div>`;
  }
 
  render(){
-
+  return this.wrapper+this.template+this.xTemplate+'</div>';	
  }
+ 
 }
