@@ -2,3 +2,31 @@ blog h1{
  text-align: center;
  color: black;
 }
+
+nav li{
+ padding-left: 1em;	
+}
+
+nav li:hover{
+ background-color: red;
+ color: white;	
+}
+
+output{
+ width: 90vw;
+ margin-left: 5vw;
+ overflow: auto; 
+}
+
+output .place{
+ padding: 2%;
+}
+
+output .place:hover{
+ background-color: orange;
+}
+
+output .place img{
+ width: 90%;
+
+}

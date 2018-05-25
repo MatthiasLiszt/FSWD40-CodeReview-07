@@ -1,4 +1,5 @@
-#Travel-o-matic blog
+
+# Travel-o-matic blog
 
 You enjoy traveling to different places, visiting events and eating good food in a restaurant. 
 You want to create TypeScript-based system that presents all of your experiences in a web-page.

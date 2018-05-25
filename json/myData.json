@@ -1,0 +1,7 @@
+
+var myData=[{"name": "St. Charles Church","address": "Karlsplatz 1, 1010 Vienna",
+	         "picture": "img/karlskirche.jpg" 
+            },{"name": "Zoo Vienna",
+	         "address": "Maxingstraße 13b, 1130 Wien",
+	         "picture": "img/zoovienna.jpg" 
+            }];
