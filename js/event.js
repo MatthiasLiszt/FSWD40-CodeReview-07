@@ -8,18 +8,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Restaurants = /** @class */ (function (_super) {
-    __extends(Restaurants, _super);
-    function Restaurants(Name, Address, Picture, Phone, Category, WebUrl) {
+var Events = /** @class */ (function (_super) {
+    __extends(Events, _super);
+    function Events(Name, Address, Picture, Time, Price, WebUrl) {
         var _this = _super.call(this, Name, Address, Picture) || this;
-        _this.phone = Phone;
-        _this.category = Category;
+        _this.time = Time;
+        _this.price = Price;
         _this.weburl = WebUrl;
-        _this.xTemplate = "<div class=\"moreInfo\">\n                  <p><span>" + Category + "</span></p>\n                  <p>" + Phone + "</p>\n                  <p><a href=\"https://" + WebUrl + "\">" + WebUrl + "</p> \n                  </div>";
+        _this.xTemplate = "<div class=\"moreInfo\">\n                  <p><span>" + Time + "</span></p>\n                  <p>" + Price + "</p>\n                  <p><a href=\"https://" + WebUrl + "\">" + WebUrl + "</p> \n                  </div>";
         return _this;
     }
-    Restaurants.prototype.render = function () {
+    Events.prototype.render = function () {
         return this.wrapper + this.template + this.xTemplate + '</div>';
     };
-    return Restaurants;
+    return Events;
 }(Locations));

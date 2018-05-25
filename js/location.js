@@ -5,7 +5,7 @@ var Locations = /** @class */ (function () {
         this.address = Address;
         this.picture = Picture;
         this.id = Id;
-        this.template = "<h3>" + Name + "</h3>\n                 <img src=\"" + Picture + "\"/>\n                 <p>" + Address + "</p> \n                ";
+        this.template = "<h3>" + Name + "</h3>\n                 <img src=\"" + Picture + "\"/>\n                 <textarea>" + Address + "</textarea> \n                ";
         this.wrapper = "<div id=\"place" + Id + "\" class=\"col-lg-3 col-md-6 col-sm-12 place\">";
     }
     Locations.prototype.render = function () {

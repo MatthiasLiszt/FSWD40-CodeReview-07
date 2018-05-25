@@ -36,7 +36,8 @@ output{
 }
 
 output .place{
- padding: 2%;
+ padding: 5%;
+ //height: 85%;
 }
 
 output .place:hover{
@@ -63,6 +64,13 @@ output .place img{
  display: none;
 }
 
+.place textarea{
+ width: 90%;
+ //height: 2em;
+ border: none;
+ overflow: auto;	
+ background-color: transparent;
+}
 .moreInfo span{
  color: darkblue;
  font-weight: bold;

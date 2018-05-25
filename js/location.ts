@@ -15,7 +15,7 @@ class Locations{
   this.id=Id;
   this.template=`<h3>${Name}</h3>
                  <img src="${Picture}"/>
-                 <p>${Address}</p> 
+                 <textarea>${Address}</textarea> 
                 `;
   this.wrapper=`<div id="place${Id}" class="col-lg-3 col-md-6 col-sm-12 place">`;              
  }

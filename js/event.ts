@@ -1,17 +1,17 @@
-class Restaurants extends Locations{
- public phone: string;
- public category: string;
+class Events extends Locations{
+ public time: string;
+ public price: string;
  public weburl: string;	
  public xTemplate: string;
 
- constructor(Name,Address,Picture,Phone,Category,WebUrl){
+ constructor(Name,Address,Picture,Time,Price,WebUrl){
   super(Name,Address,Picture);	
-  this.phone=Phone;
-  this.category=Category;
+  this.time=Time;
+  this.price=Price;
   this.weburl=WebUrl;
   this.xTemplate=`<div class="moreInfo">
-                  <p><span>${Category}</span></p>
-                  <p>${Phone}</p>
+                  <p><span>${Time}</span></p>
+                  <p>${Price}</p>
                   <p><a href="https://${WebUrl}">${WebUrl}</p> 
                   </div>`;
  }

@@ -22,5 +22,21 @@ var myData=[{"kind": "place",
 	         "phone": "+43 1 58 528 56 , +43 1 58 528 56",
 	         "weburl": "www.sixta-restaurant.at",
 	         "category": "Viennesse"
+            },
+            {"kind": "event",
+             "name": "Kris Kristofferson",
+	         "address": "Wiener Stadthalle, Halle F, Roland Rainer Platz 1, 1150 Wien",
+	         "picture": "img/81139.jpeg", 
+	         "price": "58.50 EUR",
+	         "weburl": "kriskristofferson.com",
+	         "date": "Fr., 15. Jun. 20:00"
+            },
+            {"kind": "event",
+             "name": "Lenny Kravitz",
+	         "address": "Wiener Stadthalle - Halle D, Roland Rainer Platz 1, 1150 Wien",
+	         "picture": "img/lennykravitz.jpg", 
+	         "price": "47.80 EUR",
+	         "weburl": "www.lennykravitz.com",
+	         "date": "Sat, 09.06.2018 - 19:30"
             }
         ];
