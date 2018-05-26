@@ -81,16 +81,16 @@ function showEvents(){
 
 function addEntry(){
  let template=`<h2>Add Entry Form</h2>
-               <p><select>
+               <p><select id="addentryKind" onchange="moreEntryData()">
                  <option value="place">Place</option>
                  <option value="event">Event</option>
                  <option value="restaurant">Restaurant</option>
                </select></p>
-               <p><input type="text" placeholder="Name"/></p>
-               <p><input type="text" placeholder="Address"/></p>
-               <p><span>Image : <input type="file" style="display:inline;"/></span></p>
+               <p><input type="text" id="addentryName" placeholder="Name"/></p>
+               <p><input type="text" id="addentryAddress" placeholder="Address"/></p>
+               <p>Image : <input type="file" id="addentryPicture" style="display:inline;" accept="image/png, image/jpeg"/></p>
                <div id="AdditionalInfo"></div>
-               <p><input type="text" value="${Date().toString()}"/></p>
+               <p><input type="text" id="addentryCreated" value="${Date().toString()}"/></p>
                <p><button onclick="addEntryData()">Add</button></p>
               `;
  $('output').remove();
@@ -99,7 +99,23 @@ function addEntry(){
 }
 
 function addEntryData(){
- alert("data not added"); 
+ //alert("data not added");
+ var newEntry={"kind": '', "name": '', "address": '', "created": '', "price": '', "weburl": '', "phone": '', "category": '', "picture": ''};
+ var a='#addentry'
+ newEntry.kind=$(a+'Kind').val();
+ newEntry.name=$(a+'Name').val();
+ newEntry.address=$(a+'Address').val();
+ newEntry.created=$(a+'Created').val();
+ newEntry.price=$(a+'Price').val();
+ newEntry.weburl=$(a+'Weburl').val();
+ newEntry.date=$(a+'Date').val();
+ newEntry.phone=$(a+'Phone').val();
+ newEntry.category=$(a+'Category').val();
+ var fakepath=$(a+'Picture').val();
+ newEntry.picture=fakepath.replace('C:\\fakepath\\','img/');
+ let newElement=JSON.stringify(newEntry); 
+ console.log(JSON.stringify(newElement));
+ myData.push(JSON.parse(newElement));
 }
 
 function saveData(){
@@ -119,3 +135,19 @@ function loadData(){
   } 
 }
 
+function moreEntryData(){
+ //console.log('append more entry data');
+ $('#AdditionalInfo').html('');
+ if($('#addentryKind').val()=="event")
+  {$('#AdditionalInfo').append(`<p><input type="text" id="addentryPrice" placeholder="0 EUR"/></p>
+                                <p><input type="text" id="addentryWeburl" placeholder="https://"/></p>
+                                <p><input type="text" id="addentryDate" placeholder="Date Of Event" /></p>
+                               `);
+  }
+ if($('#addentryKind').val()=="restaurant")
+  {$('#AdditionalInfo').append(`<p><input type="text" id="addentryPhone" placeholder="Phone Number"/></p>
+                                <p><input type="text" id="addentryWeburl" placeholder="https://"/></p>
+                                <p><input type="text" id="addentryCategory" placeholder="Type Of Restaurant" /></p>
+                               `);
+  }  
+}

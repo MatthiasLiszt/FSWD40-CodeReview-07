@@ -61,13 +61,29 @@ function showEvents() {
     }
 }
 function addEntry() {
-    var template = "<h2>Add Entry Form</h2>\n               <p><select>\n                 <option value=\"place\">Place</option>\n                 <option value=\"event\">Event</option>\n                 <option value=\"restaurant\">Restaurant</option>\n               </select></p>\n               <p><input type=\"text\" placeholder=\"Name\"/></p>\n               <p><input type=\"text\" placeholder=\"Address\"/></p>\n               <p><span>Image : <input type=\"file\" style=\"display:inline;\"/></span></p>\n               <div id=\"AdditionalInfo\"></div>\n               <p><input type=\"text\" value=\"" + Date().toString() + "\"/></p>\n               <p><button onclick=\"addEntryData()\">Add</button></p>\n              ";
+    var template = "<h2>Add Entry Form</h2>\n               <p><select id=\"addentryKind\" onchange=\"moreEntryData()\">\n                 <option value=\"place\">Place</option>\n                 <option value=\"event\">Event</option>\n                 <option value=\"restaurant\">Restaurant</option>\n               </select></p>\n               <p><input type=\"text\" id=\"addentryName\" placeholder=\"Name\"/></p>\n               <p><input type=\"text\" id=\"addentryAddress\" placeholder=\"Address\"/></p>\n               <p>Image : <input type=\"file\" id=\"addentryPicture\" style=\"display:inline;\" accept=\"image/png, image/jpeg\"/></p>\n               <div id=\"AdditionalInfo\"></div>\n               <p><input type=\"text\" id=\"addentryCreated\" value=\"" + Date().toString() + "\"/></p>\n               <p><button onclick=\"addEntryData()\">Add</button></p>\n              ";
     $('output').remove();
     $('blog').append("<output><div id='addEntryForm'></div></output>");
     $('#addEntryForm').append(template);
 }
 function addEntryData() {
-    alert("data not added");
+    //alert("data not added");
+    var newEntry = { "kind": '', "name": '', "address": '', "created": '', "price": '', "weburl": '', "phone": '', "category": '', "picture": '' };
+    var a = '#addentry';
+    newEntry.kind = $(a + 'Kind').val();
+    newEntry.name = $(a + 'Name').val();
+    newEntry.address = $(a + 'Address').val();
+    newEntry.created = $(a + 'Created').val();
+    newEntry.price = $(a + 'Price').val();
+    newEntry.weburl = $(a + 'Weburl').val();
+    newEntry.date = $(a + 'Date').val();
+    newEntry.phone = $(a + 'Phone').val();
+    newEntry.category = $(a + 'Category').val();
+    var fakepath = $(a + 'Picture').val();
+    newEntry.picture = fakepath.replace('C:\\fakepath\\', 'img/');
+    var newElement = JSON.stringify(newEntry);
+    console.log(JSON.stringify(newElement));
+    myData.push(JSON.parse(newElement));
 }
 function saveData() {
     console.log('data saved');
@@ -83,5 +99,15 @@ function loadData() {
         myData = JSON.parse(cat);
         $('output').text('stored data has been loaded');
         console.log('data loaded');
+    }
+}
+function moreEntryData() {
+    //console.log('append more entry data');
+    $('#AdditionalInfo').html('');
+    if ($('#addentryKind').val() == "event") {
+        $('#AdditionalInfo').append("<p><input type=\"text\" id=\"addentryPrice\" placeholder=\"0 EUR\"/></p>\n                                <p><input type=\"text\" id=\"addentryWeburl\" placeholder=\"https://\"/></p>\n                                <p><input type=\"text\" id=\"addentryDate\" placeholder=\"Date Of Event\" /></p>\n                               ");
+    }
+    if ($('#addentryKind').val() == "restaurant") {
+        $('#AdditionalInfo').append("<p><input type=\"text\" id=\"addentryPhone\" placeholder=\"Phone Number\"/></p>\n                                <p><input type=\"text\" id=\"addentryWeburl\" placeholder=\"https://\"/></p>\n                                <p><input type=\"text\" id=\"addentryCategory\" placeholder=\"Type Of Restaurant\" /></p>\n                               ");
     }
 }
