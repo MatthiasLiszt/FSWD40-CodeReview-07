@@ -10,8 +10,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Events = /** @class */ (function (_super) {
     __extends(Events, _super);
-    function Events(Name, Address, Picture, Time, Price, WebUrl) {
-        var _this = _super.call(this, Name, Address, Picture) || this;
+    function Events(Name, Address, Picture, Created, Time, Price, WebUrl) {
+        var _this = _super.call(this, Name, Address, Picture, Created) || this;
         _this.time = Time;
         _this.price = Price;
         _this.weburl = WebUrl;
@@ -19,7 +19,12 @@ var Events = /** @class */ (function (_super) {
         return _this;
     }
     Events.prototype.render = function () {
-        return this.wrapper + this.template + this.xTemplate + '</div>';
+        if (this.created === undefined) {
+            return this.wrapper + this.template + this.xTemplate + '</div>';
+        }
+        else {
+            return this.wrapper + this.template + ("<p>Created: " + this.created + "</p>") + this.xTemplate + '</div>';
+        }
     };
     return Events;
 }(Locations));

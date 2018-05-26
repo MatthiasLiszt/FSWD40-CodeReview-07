@@ -10,8 +10,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Restaurants = /** @class */ (function (_super) {
     __extends(Restaurants, _super);
-    function Restaurants(Name, Address, Picture, Phone, Category, WebUrl) {
-        var _this = _super.call(this, Name, Address, Picture) || this;
+    function Restaurants(Name, Address, Picture, Created, Phone, Category, WebUrl) {
+        var _this = _super.call(this, Name, Address, Picture, Created) || this;
         _this.phone = Phone;
         _this.category = Category;
         _this.weburl = WebUrl;
@@ -19,7 +19,12 @@ var Restaurants = /** @class */ (function (_super) {
         return _this;
     }
     Restaurants.prototype.render = function () {
-        return this.wrapper + this.template + this.xTemplate + '</div>';
+        if (this.created === undefined) {
+            return this.wrapper + this.template + this.xTemplate + '</div>';
+        }
+        else {
+            return this.wrapper + this.template + ("<p>Created: " + this.created + "</p>") + this.xTemplate + '</div>';
+        }
     };
     return Restaurants;
 }(Locations));

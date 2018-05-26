@@ -5,7 +5,8 @@ var myData=[{"kind": "place",
             },{"kind": "place",
                "name": "Zoo Vienna",
 	         "address": "Maxingstraße 13b, 1130 Wien",
-	         "picture": "img/zoovienna.jpg" 
+	         "picture": "img/zoovienna.jpg",
+             "created": "24.May 2018 12:45"
             },
             {"kind": "restaurant",
                "name": "Lemon Leaf",
@@ -13,7 +14,8 @@ var myData=[{"kind": "place",
 	         "picture": "img/lemonleaf.png" ,
 	         "phone" : "+43(1)5812308",
 	         "weburl": "www.lemonleaf.at",
-	         "category": "Asian"
+	         "category": "Asian",
+	         "created": "25.May 2018 11:45"
             },
             {"kind": "restaurant",
                "name": "SIXTA",
@@ -29,7 +31,8 @@ var myData=[{"kind": "place",
 	         "picture": "img/81139.jpeg", 
 	         "price": "58.50 EUR",
 	         "weburl": "kriskristofferson.com",
-	         "date": "Fr., 15. Jun. 20:00"
+	         "date": "Fr., 15. Jun. 20:00",
+	         "created": "21.May 2018 11:45"
             },
             {"kind": "event",
              "name": "Lenny Kravitz",

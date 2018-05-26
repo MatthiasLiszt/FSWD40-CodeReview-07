@@ -4,8 +4,8 @@ class Events extends Locations{
  public weburl: string;	
  public xTemplate: string;
 
- constructor(Name,Address,Picture,Time,Price,WebUrl){
-  super(Name,Address,Picture);	
+ constructor(Name,Address,Picture,Created,Time,Price,WebUrl){
+  super(Name,Address,Picture,Created);	
   this.time=Time;
   this.price=Price;
   this.weburl=WebUrl;
@@ -17,7 +17,10 @@ class Events extends Locations{
  }
 
  render(){
-  return this.wrapper+this.template+this.xTemplate+'</div>';	
+  if(this.created===undefined) 
+   {return this.wrapper+this.template+this.xTemplate+'</div>';}
+  else   
+   {return this.wrapper+this.template+`<p>Created: ${this.created}</p>`+this.xTemplate+'</div>';} 
  }
  
 }
